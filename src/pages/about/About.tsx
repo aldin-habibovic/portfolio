@@ -1,3 +1,5 @@
+import React from 'react';
+
 const About = () => {
     return (
         <div className="section" id="about">
@@ -8,7 +10,7 @@ const About = () => {
                             <div className="card-body">
                                 <div className="h4 mt-0 title">About</div>
                                 <p>Hello! I am Aldin Habibović. Software Engineer</p>
-                                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." <a href="https://templateflip.com/templates/creative-cv/" target="_blank">Learn More</a></p>
+                                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." <a href="https://templateflip.com/templates/creative-cv/" target="_blank" rel="noreferrer">Learn More</a></p>
                             </div>
                         </div>
                         <div className="col-lg-6 col-md-12">

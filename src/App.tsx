@@ -1,6 +1,6 @@
 import './App.css';
 import Footer from './footer/Footer';
-import Header from './header/Header/Header';
+import Header from './header/Header';
 import About from './pages/about/About';
 import Education from './pages/education/Education';
 import Profile from './pages/profile/Profile';
