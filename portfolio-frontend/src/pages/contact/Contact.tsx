@@ -52,11 +52,11 @@ const Contact = () => {
                                         <div className="col-md-6">
                                             <div className="card-body">
                                                 <p className="mb-0"><strong>Address </strong></p>
-                                                <p className="pb-2">140, City Center, New York, U.S.A</p>
+                                                <p className="pb-2">140, City Center, Munich, Germany</p>
                                                 <p className="mb-0"><strong>Phone</strong></p>
-                                                <p className="pb-2">+1718-111-0011</p>
+                                                <p className="pb-2">016 239 41...</p>
                                                 <p className="mb-0"><strong>Email</strong></p>
-                                                <p>anthony@company.com</p>
+                                                <p>test@hotmail.com</p>
                                             </div>
                                         </div>
                                     </div>
