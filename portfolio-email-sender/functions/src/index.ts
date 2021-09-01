@@ -1,11 +1,16 @@
 import * as functions from "firebase-functions";
 
-import { createTransport } from "nodemailer";
+import {createTransport} from "nodemailer";
 
+const gmailEmail = functions.config().gmail.email;
+const gmailPassword = functions.config().gmail.password;
 
 const mailTransport = createTransport({
-  service: 'gmail',
-  auth: {}
+  service: "gmail",
+  auth: {
+    user: gmailEmail,
+    pass: gmailPassword,
+  },
 });
 
 // // Start writing Firebase Functions
@@ -17,13 +22,13 @@ export const helloWorld = functions.https.onRequest((request, response) => {
   const mailOptions = {
     from: "test@gmail.com",
     replyTo: "test@gmail.com",
-    to: "",
+    to: gmailEmail,
     subject: "test email",
-    text: "text text"
-  }
+    text: "text text",
+  };
 
   mailTransport.sendMail(mailOptions).then(() => {
-    console.log('New email sent to: ' );
+    console.log("New email sent to: " + gmailEmail);
     response.status(200).send({isEmailSend: true});
   });
 
