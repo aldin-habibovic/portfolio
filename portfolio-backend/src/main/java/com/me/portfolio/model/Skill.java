@@ -36,6 +36,4 @@ public class Skill {
         this.progress = progress;
     }
     
-    
-    
 }

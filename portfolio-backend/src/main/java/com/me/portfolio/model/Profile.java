@@ -15,6 +15,9 @@ public class Profile {
     private String lastName;
     private String email;
     private String age;
+    private String address;
+    private String phone;
+    private String[] languages;
 
     private List<Education> educations;
     private List<Skill> skils;
@@ -23,12 +26,18 @@ public class Profile {
 
     }
 
-    public Profile(String firstName, String lastName, String email, String age) {
+    public Profile(String firstName, String lastName, String email, String age, String address, String phone,
+            String[] languages, List<Education> educations, List<Skill> skils) {
         super();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.age = age;
+        this.address = address;
+        this.phone = phone;
+        this.languages = languages;
+        this.educations = educations;
+        this.skils = skils;
     }
 
     public String getFirstName() {
@@ -77,6 +86,30 @@ public class Profile {
 
     public void setSkils(List<Skill> skils) {
         this.skils = skils;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String[] getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(String[] languages) {
+        this.languages = languages;
     }
 
 }
