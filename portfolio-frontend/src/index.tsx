@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { RestfulProvider } from 'restful-react';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <RestfulProvider base="https://portfolio-backend-ez6g75uofq-uc.a.run.app">
+      <App />
+    </RestfulProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
