@@ -1,15 +1,7 @@
-import { Education } from "../../App";
+import { EducationDTO } from "../../../FETCHERS";
 
-export interface IEducationItem extends Education {
-    start: Date;
-    end?: Date;
-    level: string;
-    university: string;
-    degreeCourse: string;
-    description: string;
-}
 
-const EducationItem = (props: { educationItem: IEducationItem }) => {
+const EducationItem = (props: { educationItem: EducationDTO }) => {
     const { level, university, degreeCourse, description } = props.educationItem;
 
     return (
