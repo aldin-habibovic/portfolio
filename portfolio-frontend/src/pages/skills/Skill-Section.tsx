@@ -1,6 +1,6 @@
 import SkillItem, { ISkillItem } from "./Skill-Item";
 
-const Skills = () => {
+const SkillSection = () => {
     const skill1: ISkillItem = { name: "HTML1", progress: "20%" };
     const skill2: ISkillItem = { name: "CSS1", progress: "75%" };
 
@@ -32,4 +32,4 @@ const Skills = () => {
     );
 }
 
-export default Skills;
+export default SkillSection;

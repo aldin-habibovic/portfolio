@@ -1,4 +1,4 @@
-const Profile = () => {
+const ProfileSection = () => {
     return (
         <div className="profile-page">
             <div className="wrapper">
@@ -22,4 +22,4 @@ const Profile = () => {
     );
 }
 
-export default Profile;
+export default ProfileSection;

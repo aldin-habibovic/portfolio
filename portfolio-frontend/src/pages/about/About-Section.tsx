@@ -1,6 +1,5 @@
 import React from 'react';
 import ReadMore from '../../common/components/Read-More';
-
 export interface IAboutProps {
     aboutMe: string;
     age: number;
@@ -10,7 +9,7 @@ export interface IAboutProps {
     language: string[];
 }
 
-const About = (props: { about: IAboutProps }) => {
+const AboutSection = (props: { about: IAboutProps }) => {
     const { aboutMe, age, email, phone, adress, language } = props.about;
 
     const desc = '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.....Aysen ich liebe dich soooooooooo sehr ob du es glaubst oder nicht duuuu dummmmy :D"';
@@ -59,4 +58,4 @@ const About = (props: { about: IAboutProps }) => {
     );
 }
 
-export default About;
+export default AboutSection;

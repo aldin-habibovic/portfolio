@@ -1,7 +1,7 @@
-const Contact = () => {
+const ContactSection = () => {
     return (
         <div className="section" id="contact">
-            <div className="cc-contact-information" style={{ backgroundImage: "url('images/staticmap.png')" }}>
+            <div className="cc-contact-information" style={{ backgroundImage: "url('images/munich_staticmap.png')" }}>
                 <div className="container">
                     <div className="cc-contact">
                         <div className="row">
@@ -70,4 +70,4 @@ const Contact = () => {
     );
 }
 
-export default Contact;
+export default ContactSection;

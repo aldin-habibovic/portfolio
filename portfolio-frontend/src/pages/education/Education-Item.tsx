@@ -1,4 +1,6 @@
-export interface IEducationItem {
+import { Education } from "../../App";
+
+export interface IEducationItem extends Education {
     start: Date;
     end?: Date;
     level: string;

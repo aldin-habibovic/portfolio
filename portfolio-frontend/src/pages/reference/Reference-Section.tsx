@@ -1,4 +1,4 @@
-const Reference = () => {
+const ReferenceSection = () => {
     return (
         <>
             <div className="section" id="reference">
@@ -54,4 +54,4 @@ const Reference = () => {
     );
 }
 
-export default Reference;
+export default ReferenceSection;
