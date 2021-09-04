@@ -21,12 +21,12 @@ public class PortfolioController {
     private ProfileService profileService;
 
     @GetMapping(value = "/read", consumes = { MediaType.ALL_VALUE })
-    public ProfileDTO createProfile() {
-        return this.profileService.getProfileByName("Aldin");
+    public ProfileDTO readProfile() {
+        return this.profileService.getProfileByName("aldin");
     }
 
     @PostMapping(value = "/create")
-    public Profile savePortfolio(@RequestBody Profile profile) {
+    public Profile createProfile(@RequestBody Profile profile) {
         return profile;
     }
 
