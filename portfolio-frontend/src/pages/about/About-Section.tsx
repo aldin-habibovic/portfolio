@@ -1,16 +1,8 @@
-import React from 'react';
+import { BasicInformationDTO } from '../../../FETCHERS';
 import ReadMore from '../../common/components/Read-More';
-export interface IAboutProps {
-    aboutMe: string;
-    age: number;
-    email: string;
-    phone: string;
-    adress: string;
-    language: string[];
-}
 
-const AboutSection = (props: { about: IAboutProps }) => {
-    const { aboutMe, age, email, phone, adress, language } = props.about;
+const AboutSection = (props: { basicInfos: BasicInformationDTO }) => {
+    const { firstName, lastName, age, email, phone, address, languages } = props.basicInfos;
 
     const desc = '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.....Aysen ich liebe dich soooooooooo sehr ob du es glaubst oder nicht duuuu dummmmy :D"';
 
@@ -43,11 +35,11 @@ const AboutSection = (props: { about: IAboutProps }) => {
                                 </div>
                                 <div className="row mt-3">
                                     <div className="col-sm-4"><strong className="text-uppercase">Address:</strong></div>
-                                    <div className="col-sm-8">{adress}</div>
+                                    <div className="col-sm-8">{address}</div>
                                 </div>
                                 <div className="row mt-3">
                                     <div className="col-sm-4"><strong className="text-uppercase">Language:</strong></div>
-                                    <div className="col-sm-8">English, German</div>
+                                    <div className="col-sm-8">{languages}</div>
                                 </div>
                             </div>
                         </div>
