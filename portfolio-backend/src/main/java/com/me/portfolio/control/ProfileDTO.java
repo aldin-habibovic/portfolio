@@ -4,16 +4,11 @@ import java.util.List;
 
 public class ProfileDTO {
 
-  public String id;
+    public String id;
     
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String age;
-    private String address;
-    private String phone;
-    private String[] languages;
-
+    private String profileName; 
+    
+    private BasicInformationDTO basicInformation;
     private List<EducationDTO> educations;
     private List<SkillDTO> skils;
     
@@ -21,16 +16,10 @@ public class ProfileDTO {
 
     }
 
-    public ProfileDTO(String firstName, String lastName, String email, String age, String address, String phone,
-            String[] languages, List<EducationDTO> educations, List<SkillDTO> skils) {
+    public ProfileDTO(String profilName, BasicInformationDTO basicInformation, List<EducationDTO> educations, List<SkillDTO> skils) {
         super();
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.age = age;
-        this.address = address;
-        this.phone = phone;
-        this.languages = languages;
+        this.profileName = profilName;
+        this.basicInformation = basicInformation;
         this.educations = educations;
         this.skils = skils;
     }
@@ -43,36 +32,21 @@ public class ProfileDTO {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    
+    public String getProfileName() {
+        return profileName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setProfileName(String profileName) {
+        this.profileName = profileName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public BasicInformationDTO getBasicInformation() {
+        return basicInformation;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
+    public void setBasicInformation(BasicInformationDTO basicInformation) {
+        this.basicInformation = basicInformation;
     }
 
     public List<EducationDTO> getEducations() {
@@ -89,30 +63,6 @@ public class ProfileDTO {
 
     public void setSkils(List<SkillDTO> skils) {
         this.skils = skils;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String[] getLanguages() {
-        return languages;
-    }
-
-    public void setLanguages(String[] languages) {
-        this.languages = languages;
     }
     
 }

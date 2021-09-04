@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.me.portfolio.model.BasicInformation;
 import com.me.portfolio.model.Education;
 import com.me.portfolio.model.Profile;
 import com.me.portfolio.model.Skill;
@@ -17,7 +18,7 @@ public class ProfileService {
     private ProfileRepository profileRepository;
 
     public ProfileDTO getProfileByName(final String name) {
-        final Profile profile = this.profileRepository.findByFirstName(name);
+        final Profile profile = this.profileRepository.findByProfileName(name);
         return convertToProfileDTO(profile);
     }
 
@@ -25,17 +26,18 @@ public class ProfileService {
         final Profile profile = convertToProfile(profileDTO);
         return this.profileRepository.save(profile);
     }
-    
+
     private Profile convertToProfile(ProfileDTO profileDTO) {
         Profile profile = new Profile();
+        
+        profile.setProfileName(profileDTO.getProfileName());
+        
+        final BasicInformationDTO basicInfos = profileDTO.getBasicInformation();
+        final BasicInformation basicInformation = new BasicInformation(basicInfos.getFirstName(),
+                basicInfos.getLastName(), basicInfos.getAge(), basicInfos.getEmail(), basicInfos.getAddress(),
+                basicInfos.getPhone(), basicInfos.getLanguages());
 
-        profile.setFirstName(profileDTO.getFirstName());
-        profile.setLastName(profileDTO.getLastName());
-        profile.setAddress(profileDTO.getAddress());
-        profile.setAge(profileDTO.getAge());
-        profile.setEmail(profileDTO.getEmail());
-        profile.setPhone(profileDTO.getPhone());
-        profile.setLanguages(profileDTO.getLanguages());
+        profile.setBasicInfos(basicInformation);
 
         profile.setEducations(
                 profileDTO.getEducations().stream().map(this::convertToEducation).collect(Collectors.toList()));
@@ -44,7 +46,7 @@ public class ProfileService {
 
         return profile;
     }
-    
+
     private Education convertToEducation(EducationDTO educationDTO) {
         return new Education(educationDTO.getLevel(), educationDTO.getUniversity(), educationDTO.getDegreeCourse(),
                 educationDTO.getDegreeCourse());
@@ -53,17 +55,18 @@ public class ProfileService {
     private Skill convertToSkill(SkillDTO skillDTO) {
         return new Skill(skillDTO.getName(), skillDTO.getProgress());
     }
-    
+
     private ProfileDTO convertToProfileDTO(Profile profile) {
         ProfileDTO profileDTO = new ProfileDTO();
 
-        profileDTO.setFirstName(profile.getFirstName());
-        profileDTO.setLastName(profile.getLastName());
-        profileDTO.setAddress(profile.getAddress());
-        profileDTO.setAge(profile.getAge());
-        profileDTO.setEmail(profile.getEmail());
-        profileDTO.setPhone(profile.getPhone());
-        profileDTO.setLanguages(profile.getLanguages());
+        profileDTO.setProfileName(profile.getProfileName());
+        
+        final BasicInformation basicInfos = profile.getBasicInfos();
+        BasicInformationDTO basicInformation = new BasicInformationDTO(basicInfos.getFirstName(),
+                basicInfos.getLastName(), basicInfos.getAge(), basicInfos.getEmail(), basicInfos.getAddress(),
+                basicInfos.getPhone(), basicInfos.getLanguages());
+
+        profileDTO.setBasicInformation(basicInformation);
 
         profileDTO.setEducations(
                 profile.getEducations().stream().map(this::convertToEducationDTO).collect(Collectors.toList()));
