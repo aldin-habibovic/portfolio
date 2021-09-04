@@ -9,19 +9,20 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.me.portfolio.control.ProfileDTO;
+import com.me.portfolio.control.ProfileService;
 import com.me.portfolio.model.Profile;
-import com.me.portfolio.repository.ProfileRepository;
 
 @RestController
 @RequestMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 public class PortfolioController {
 
     @Autowired
-    private ProfileRepository profileRepository;
+    private ProfileService profileService;
 
     @GetMapping(value = "/read", consumes = { MediaType.ALL_VALUE })
-    public Profile index() {
-        return profileRepository.findByFirstName("Aldin");
+    public ProfileDTO createProfile() {
+        return this.profileService.getProfileByName("Aldin");
     }
 
     @PostMapping(value = "/create")
@@ -30,8 +31,8 @@ public class PortfolioController {
     }
 
     @PutMapping(value = "/update")
-    public Profile update(@RequestBody Profile profile) {
-        return profileRepository.save(profile);
+    public Profile updateProfile(@RequestBody ProfileDTO profileDTO) {
+        return this.profileService.updateProfile(profileDTO);
     }
-    
+
 }
