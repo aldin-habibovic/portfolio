@@ -1,9 +1,6 @@
-export interface ISkillItem {
-    name: string;
-    progress: string;
-}
+import { SkillDTO } from "../../../FETCHERS";
 
-const SkillItem = (props: { skill: ISkillItem }) => {
+const SkillItem = (props: { skill: SkillDTO }) => {
     const { name, progress } = props.skill;
     return (
         <div className="col-md-6">
