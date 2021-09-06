@@ -26,7 +26,7 @@ function App() {
           {!loading && <SkillSection skills={data?.skils || []} />}
           {!loading && <EducationSection educations={data?.educations || []} />}
           <ReferenceSection></ReferenceSection>
-          <ContactSection></ContactSection>
+          {!loading && <ContactSection basicInfos={data?.basicInformation || {}} />}
           <PortfolioSection></PortfolioSection>
         </div>
       </div>
