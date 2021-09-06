@@ -4,6 +4,7 @@ public class BasicInformation {
 
     private String firstName;
     private String lastName;
+    private String description;
     private String age;
     private String email;
     private String address;
@@ -14,11 +15,12 @@ public class BasicInformation {
         
     }
     
-    public BasicInformation(String firstName, String lastName, String age, String email, String address, String phone,
+    public BasicInformation(String firstName, String lastName, String description, String age, String email, String address, String phone,
             String[] languages) {
         super();
         this.firstName = firstName;
         this.lastName = lastName;
+        this.description = description;
         this.age = age;
         this.email = email;
         this.address = address;
@@ -40,6 +42,14 @@ public class BasicInformation {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getAge() {

@@ -1,4 +1,9 @@
-const ContactSection = () => {
+import { BasicInformationDTO } from "../../../FETCHERS";
+
+const ContactSection = (props: { basicInfos: BasicInformationDTO }) => {
+
+    const { firstName, lastName, email, phone, address } = props.basicInfos;
+
     return (
         <div className="section" id="contact">
             <div className="cc-contact-information" style={{ backgroundImage: "url('images/munich_staticmap.png')" }}>
@@ -51,12 +56,16 @@ const ContactSection = () => {
                                         </div>
                                         <div className="col-md-6">
                                             <div className="card-body">
+                                                <p className="mb-0"><strong>First name </strong></p>
+                                                <p className="pb-2">{firstName}</p>
+                                                <p className="mb-0"><strong>Last name </strong></p>
+                                                <p className="pb-2">{lastName}</p>
                                                 <p className="mb-0"><strong>Address </strong></p>
-                                                <p className="pb-2">140, City Center, Munich, Germany</p>
+                                                <p className="pb-2">{address}</p>
                                                 <p className="mb-0"><strong>Phone</strong></p>
-                                                <p className="pb-2">016 239 41...</p>
+                                                <p className="pb-2">{phone}</p>
                                                 <p className="mb-0"><strong>Email</strong></p>
-                                                <p>test@hotmail.com</p>
+                                                <p>{email}</p>
                                             </div>
                                         </div>
                                     </div>

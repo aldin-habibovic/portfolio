@@ -4,7 +4,7 @@ const DEFAULT_LENGTH = 450;
 
 export interface IReadMore {
     length?: number;
-    content: string;
+    content?: string;
 }
 
 const ReadMore = (props: IReadMore) => {
@@ -15,8 +15,8 @@ const ReadMore = (props: IReadMore) => {
         setIsReadMore(!isReadMore);
     };
 
-    const collapseText = (text: string) => {
-        return text.slice(0, length || DEFAULT_LENGTH);
+    const collapseText = (text?: string) => {
+        return text?.slice(0, length || DEFAULT_LENGTH);
     }
 
     return (

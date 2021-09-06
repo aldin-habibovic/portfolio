@@ -3,40 +3,10 @@
 import React from "react";
 import { Get, GetProps, useGet, UseGetProps, Mutate, MutateProps, useMutate, UseMutateProps } from "restful-react";
 export const SPEC_VERSION = "2.0"; 
-export interface BasicInformationDTO {
-  firstName?: string;
-  lastName?: string;
-  age?: string;
-  email?: string;
-  address?: string;
-  phone?: string;
-  languages?: string[];
-}
-
-export interface EducationDTO {
-  id?: string;
-  level?: string;
-  university?: string;
-  degreeCourse?: string;
-  description?: string;
-}
-
-export interface ProfileDTO {
-  id?: string;
-  profileName?: string;
-  basicInformation?: BasicInformationDTO;
-  educations?: EducationDTO[];
-  skils?: SkillDTO[];
-}
-
-export interface SkillDTO {
-  name?: string;
-  progress?: string;
-}
-
 export interface BasicInformation {
   firstName?: string;
   lastName?: string;
+  description?: string;
   age?: string;
   email?: string;
   address?: string;
@@ -65,21 +35,37 @@ export interface Skill {
   progress?: string;
 }
 
-export type UpdateProfileProps = Omit<MutateProps<Profile, unknown, void, ProfileDTO, void>, "path" | "verb">;
+export interface BasicInformationDTO {
+  firstName?: string;
+  lastName?: string;
+  description?: string;
+  age?: string;
+  email?: string;
+  address?: string;
+  phone?: string;
+  languages?: string[];
+}
 
-export const UpdateProfile = (props: UpdateProfileProps) => (
-  <Mutate<Profile, unknown, void, ProfileDTO, void>
-    verb="PUT"
-    path={`/update`}
-    
-    {...props}
-  />
-);
+export interface EducationDTO {
+  id?: string;
+  level?: string;
+  university?: string;
+  degreeCourse?: string;
+  description?: string;
+}
 
-export type UseUpdateProfileProps = Omit<UseMutateProps<Profile, unknown, void, ProfileDTO, void>, "path" | "verb">;
+export interface ProfileDTO {
+  id?: string;
+  profileName?: string;
+  basicInformation?: BasicInformationDTO;
+  educations?: EducationDTO[];
+  skils?: SkillDTO[];
+}
 
-export const useUpdateProfile = (props: UseUpdateProfileProps) => useMutate<Profile, unknown, void, ProfileDTO, void>("PUT", `/update`, props);
-
+export interface SkillDTO {
+  name?: string;
+  progress?: string;
+}
 
 export type CreateProfileProps = Omit<MutateProps<Profile, unknown, void, Profile, void>, "path" | "verb">;
 
@@ -110,4 +96,20 @@ export const ReadProfile = (props: ReadProfileProps) => (
 export type UseReadProfileProps = Omit<UseGetProps<ProfileDTO, unknown, void, void>, "path">;
 
 export const useReadProfile = (props: UseReadProfileProps) => useGet<ProfileDTO, unknown, void, void>(`/read`, props);
+
+
+export type UpdateProfileProps = Omit<MutateProps<Profile, unknown, void, ProfileDTO, void>, "path" | "verb">;
+
+export const UpdateProfile = (props: UpdateProfileProps) => (
+  <Mutate<Profile, unknown, void, ProfileDTO, void>
+    verb="PUT"
+    path={`/update`}
+    
+    {...props}
+  />
+);
+
+export type UseUpdateProfileProps = Omit<UseMutateProps<Profile, unknown, void, ProfileDTO, void>, "path" | "verb">;
+
+export const useUpdateProfile = (props: UseUpdateProfileProps) => useMutate<Profile, unknown, void, ProfileDTO, void>("PUT", `/update`, props);
 

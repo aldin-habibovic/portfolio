@@ -34,7 +34,7 @@ public class ProfileService {
         
         final BasicInformationDTO basicInfos = profileDTO.getBasicInformation();
         final BasicInformation basicInformation = new BasicInformation(basicInfos.getFirstName(),
-                basicInfos.getLastName(), basicInfos.getAge(), basicInfos.getEmail(), basicInfos.getAddress(),
+                basicInfos.getLastName(), basicInfos.getDescription(), basicInfos.getAge(), basicInfos.getEmail(), basicInfos.getAddress(),
                 basicInfos.getPhone(), basicInfos.getLanguages());
 
         profile.setBasicInfos(basicInformation);
@@ -63,7 +63,7 @@ public class ProfileService {
         
         final BasicInformation basicInfos = profile.getBasicInfos();
         BasicInformationDTO basicInformation = new BasicInformationDTO(basicInfos.getFirstName(),
-                basicInfos.getLastName(), basicInfos.getAge(), basicInfos.getEmail(), basicInfos.getAddress(),
+                basicInfos.getLastName(), basicInfos.getDescription(), basicInfos.getAge(), basicInfos.getEmail(), basicInfos.getAddress(),
                 basicInfos.getPhone(), basicInfos.getLanguages());
 
         profileDTO.setBasicInformation(basicInformation);
