@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Get, GetProps, useGet, UseGetProps, Mutate, MutateProps, useMutate, UseMutateProps } from "restful-react";
-export const SPEC_VERSION = "2.0"; 
+export const SPEC_VERSION = "2.0";
 export interface BasicInformation {
   firstName?: string;
   lastName?: string;
@@ -65,6 +65,7 @@ export interface ProfileDTO {
 export interface SkillDTO {
   name?: string;
   progress?: string;
+  filename?: string;
 }
 
 export type CreateProfileProps = Omit<MutateProps<Profile, unknown, void, Profile, void>, "path" | "verb">;
@@ -73,7 +74,7 @@ export const CreateProfile = (props: CreateProfileProps) => (
   <Mutate<Profile, unknown, void, Profile, void>
     verb="POST"
     path={`/create`}
-    
+
     {...props}
   />
 );
@@ -88,7 +89,7 @@ export type ReadProfileProps = Omit<GetProps<ProfileDTO, unknown, void, void>, "
 export const ReadProfile = (props: ReadProfileProps) => (
   <Get<ProfileDTO, unknown, void, void>
     path={`/read`}
-    
+
     {...props}
   />
 );
@@ -104,7 +105,7 @@ export const UpdateProfile = (props: UpdateProfileProps) => (
   <Mutate<Profile, unknown, void, ProfileDTO, void>
     verb="PUT"
     path={`/update`}
-    
+
     {...props}
   />
 );
