@@ -6,15 +6,17 @@ public class SkillDTO {
     
     private String name;
     private String progress; 
+    private String filename;
     
     public SkillDTO() {
         
     }
 
-    public SkillDTO(String name, String progress) {
+    public SkillDTO(String name, String progress, String filename) {
         super();
         this.name = name;
         this.progress = progress;
+        this.filename = filename;
     }
 
     public String getName() {
@@ -31,6 +33,14 @@ public class SkillDTO {
 
     public void setProgress(String progress) {
         this.progress = progress;
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
     
 }

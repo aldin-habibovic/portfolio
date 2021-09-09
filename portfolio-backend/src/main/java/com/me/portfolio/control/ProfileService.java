@@ -53,7 +53,7 @@ public class ProfileService {
     }
 
     private Skill convertToSkill(SkillDTO skillDTO) {
-        return new Skill(skillDTO.getName(), skillDTO.getProgress());
+        return new Skill(skillDTO.getName(), skillDTO.getProgress(), skillDTO.getFilename());
     }
 
     private ProfileDTO convertToProfileDTO(Profile profile) {
@@ -82,6 +82,6 @@ public class ProfileService {
     }
 
     private SkillDTO convertToSkillDTO(Skill skill) {
-        return new SkillDTO(skill.getName(), skill.getProgress());
+        return new SkillDTO(skill.getName(), skill.getProgress(), skill.getFilename());
     }
 }
