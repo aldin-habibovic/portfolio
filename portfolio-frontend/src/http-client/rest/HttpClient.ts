@@ -21,7 +21,6 @@ export class HttpClientResponse implements IHttpClientResponse {
     public status: number;
 
     constructor(status: number) {
-        debugger
         this.status = status;
     }
 
@@ -44,7 +43,7 @@ export class HttpClient implements IHttpClient {
     }
 
     private async sendRequest(httpMethod: HTTPMethod, requestURL: string, data: string, headers?: IHttpClientHeaders): Promise<IHttpClientResponse> {
-        debugger
+
         const response = await this.issueRequest();
 
         const jsonResponse = response.json();
