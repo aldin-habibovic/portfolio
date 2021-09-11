@@ -2,7 +2,7 @@ import React from "react"
 
 class ContactForm extends React.Component {
 
-    constructor(props) {
+    constructor(props: any) {
         super(props);
         this.state = {
             name: '',
