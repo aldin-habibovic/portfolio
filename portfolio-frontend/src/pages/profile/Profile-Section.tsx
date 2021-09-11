@@ -6,7 +6,7 @@ const ProfileSection = () => {
                     <div className="page-header-image" data-parallax="true" style={{ backgroundImage: "url('images/panorama-mostar-bg.jpg')" }}></div>
                     <div className="container">
                         <div className="content-center">
-                            <div className="cc-profile-image"><a href="/#"><img src="images/me.jpg" alt="" /></a></div>
+                            <div className="cc-profile-image"><a href="/#"><img src="images/myself.jpg" alt="" /></a></div>
                             <div className="h2 title">Aldin Habibović</div>
                             <p className="category text-white">Software Engineer</p><a className="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Hire Me</a><a className="btn btn-primary" href="/#" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>
                         </div>
