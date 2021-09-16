@@ -8,17 +8,19 @@ public class EducationDTO {
     private String university;
     private String degreeCourse;
     private String description;
+    private String year;
 
     public EducationDTO() {
         
     }
 
-    public EducationDTO(String level, String university, String degreeCourse, String description) {
+    public EducationDTO(String level, String university, String degreeCourse, String description, String year) {
         super();
         this.level = level;
         this.university = university;
         this.degreeCourse = degreeCourse;
         this.description = description;
+        this.year = year;
     }
 
     public String getLevel() {
@@ -52,6 +54,13 @@ public class EducationDTO {
     public void setDescription(String description) {
         this.description = description;
     }
-    
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
     
 }

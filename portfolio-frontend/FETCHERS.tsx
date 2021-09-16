@@ -52,6 +52,7 @@ export interface EducationDTO {
   university?: string;
   degreeCourse?: string;
   description?: string;
+  year?: string;
 }
 
 export interface ProfileDTO {

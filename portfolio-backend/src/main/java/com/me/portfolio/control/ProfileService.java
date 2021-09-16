@@ -49,7 +49,7 @@ public class ProfileService {
 
     private Education convertToEducation(EducationDTO educationDTO) {
         return new Education(educationDTO.getLevel(), educationDTO.getUniversity(), educationDTO.getDegreeCourse(),
-                educationDTO.getDescription());
+                educationDTO.getDescription(), educationDTO.getYear());
     }
 
     private Skill convertToSkill(SkillDTO skillDTO) {
@@ -78,7 +78,7 @@ public class ProfileService {
 
     private EducationDTO convertToEducationDTO(Education education) {
         return new EducationDTO(education.getLevel(), education.getUniversity(), education.getDegreeCourse(),
-                education.getDescription());
+                education.getDescription(), education.getYear());
     }
 
     private SkillDTO convertToSkillDTO(Skill skill) {

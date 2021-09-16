@@ -11,17 +11,19 @@ public class Education {
     private String university;
     private String degreeCourse;
     private String description;
+    private String year;
 
     public Education() {
         
     }
 
-    public Education(String level, String university, String degreeCourse, String description) {
+    public Education(String level, String university, String degreeCourse, String description, String year) {
         super();
         this.level = level;
         this.university = university;
         this.degreeCourse = degreeCourse;
         this.description = description;
+        this.year = year;
     }
 
     public String getLevel() {
@@ -54,6 +56,14 @@ public class Education {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
     }
     
 }
